@@ -17,11 +17,36 @@ This docker image print tags that you choice.
 ```bash
 # Print tags for official image
 $ docker run --rm genzouw/docker-tags mysql
+latest
+8.0.17
+8.0
+8
+5.7.27
+5.7
+5.6.45
+5.6
+5
+8.0.16
 
 $ docker run --rm genzouw/docker-tags library/mysql
+latest
+8.0.17
+8.0
+8
+5.7.27
+5.7
+5.6.45
+5.6
+5
+8.0.16
 
 # Print tags for unofficial image
 $ docker run --rm genzouw/docker-tags kafkamanager/kafka-manager
+2.0.0.2
+2.0.0.0-beta
+latest
+1.3.3.23
+1.3.3.22
 ```
 
 ## Relase Note
@@ -30,14 +55,9 @@ $ docker run --rm genzouw/docker-tags kafkamanager/kafka-manager
 | ---        | ---     | ---            |
 | 2019-07-23 | v1.0    | first release. |
 
-
 ## License
 
 This software is released under the MIT License, see LICENSE.
-
-
-## Contribution
-
 
 ## Author Information
 
