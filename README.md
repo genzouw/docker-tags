@@ -51,9 +51,10 @@ latest
 
 ## Relase Note
 
-| date       | version | note           |
-| ---        | ---     | ---            |
-| 2019-07-23 | v1.0    | first release. |
+| date       | version | note                 |
+| ---        | ---     | ---                  |
+| 2019-08-07 | v1.0.1  | Add paging function. |
+| 2019-07-23 | v1.0.0  | first release.       |
 
 ## License
 

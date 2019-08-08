@@ -7,6 +7,11 @@ echo "${DOCKER_IMAGE}" \
   | grep '/' >/dev/null \
   || DOCKER_IMAGE="library/${DOCKER_IMAGE}"
 
-curl \
-  --silent "https://registry.hub.docker.com/v2/repositories/${DOCKER_IMAGE}/tags/" 2>/dev/null \
-  | jq -r '."results"[]["name"]?'
+URL="https://registry.hub.docker.com/v2/repositories/${DOCKER_IMAGE}/tags/"
+while [ "${URL}" != null ]; do
+  RESPONSE="$(
+    curl --keepalive-time 60 -4 --silent "${URL}" 2>/dev/null
+  )"
+  URL="$(echo "${RESPONSE}" | jq -r '."next"')"
+  echo "${RESPONSE}" | jq -r '."results"[]["name"]?'
+done
