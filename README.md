@@ -2,7 +2,7 @@
 
 ## Description
 
-This docker image print tags that you choice.
+This docker image print docker image tags that you choice.
 
 ## Requirements
 
