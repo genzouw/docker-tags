@@ -10,8 +10,9 @@ echo "${DOCKER_IMAGE}" \
 URL="https://registry.hub.docker.com/v2/repositories/${DOCKER_IMAGE}/tags/"
 while [ "${URL}" != null ]; do
   RESPONSE="$(
-    curl --keepalive-time 60 -4 --silent "${URL}" 2>/dev/null
+    curl --keepalive-time 300 -4 --silent "${URL}" 2>/dev/null
   )"
   URL="$(echo "${RESPONSE}" | jq -r '."next"')"
-  echo "${RESPONSE}" | jq -r '."results"[]["name"]?'
-done
+  echo "${RESPONSE}"
+done \
+  | jq -r '."results"[]["name"]?'
