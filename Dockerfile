@@ -1,6 +1,11 @@
-FROM alpine
+FROM alpine:3.10.2
 
-RUN apk add --no-cache curl jq
+LABEL maintainer "genzouw <genzouw@gmail.com>"
+
+RUN apk add --no-cache \
+  curl \
+  jq \
+  ;
 
 COPY entrypoint.sh /usr/local/bin
 
