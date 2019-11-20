@@ -15,4 +15,5 @@ while [ "${URL}" != null ]; do
   URL="$(echo "${RESPONSE}" | jq -r '."next"')"
   echo "${RESPONSE}"
 done \
-  | jq -r '."results"[]["name"]?'
+  | jq -r '."results"[] | .name+" "+.last_updated' \
+  | xargs -n 2 printf "%-15s\t%s\n"
