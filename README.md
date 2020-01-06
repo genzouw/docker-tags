@@ -1,5 +1,10 @@
 # Docker Tags
 
+[![Docker Pulls](https://img.shields.io/docker/pulls/genzouw/docker-tags.svg?style=for-the-badge)](https://hub.docker.com/r/genzouw/docker-tags/)
+[![Docker Cloud Automated build](https://img.shields.io/docker/cloud/automated/genzouw/docker-tags.svg?style=for-the-badge)](https://hub.docker.com/r/genzouw/docker-tags/)
+
+[![dockeri.co](https://dockeri.co/image/genzouw/docker-tags)](https://hub.docker.com/r/genzouw/docker-tags)
+
 ## Description
 
 This docker image print docker image tags that you choice.
