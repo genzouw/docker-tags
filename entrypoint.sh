@@ -17,9 +17,8 @@ URL="https://registry.hub.docker.com/v2/repositories/${DOCKER_IMAGE}/tags/"
       curl --keepalive-time 300 -4 --silent "${URL}" 2>/dev/null
     )"
     URL="$(echo "${RESPONSE}" | jq -r '."next"')"
-    echo "${RESPONSE}" | jq -r '."results"[] | .name+" "+(.full_size|tostring)+" "+.last_updated' &
+    echo "${RESPONSE}" | jq -r '."results"[] | .name+" "+(.full_size|tostring)+" "+.last_updated'
   done
-  wait
 ) | while read -r TAG SIZE LAST_UPDATED; do
   printf "%-20s\t%10s\t%s\n" "${TAG}" "${SIZE}" "${LAST_UPDATED}"
 done
