@@ -21,6 +21,20 @@ This docker image print docker image tags that you choice.
 
 ## Usage
 
+*If possible, it is recommended to set the following aliases in startup scripts such as `.bashrc` and` .bashrc`.*
+
+```bash
+# For Bash
+echo 'alias docker-tags="docker run --rm genzouw/docker-tags"' >> ~/.bashrc
+echo 'alias dtags="dtags"' >> ~/.bashrc
+
+# For Zsh
+echo 'alias docker-tags="docker run --rm genzouw/docker-tags"' >> ~/.zshrc
+echo 'alias dtags="dtags"' >> ~/.zshrc
+```
+
+Let's use it immediately.
+
 ```bash
 # Print tags for official image
 $ docker run --rm genzouw/docker-tags mysql
