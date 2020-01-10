@@ -1,5 +1,6 @@
 # Docker Tags
 
+[![Docker Cloud build status](https://img.shields.io/docker/cloud/build/genzouw/docker-tags?style=for-the-badge)](https://hub.docker.com/r/genzouw/docker-tags/)
 [![Docker Pulls](https://img.shields.io/docker/pulls/genzouw/docker-tags.svg?style=for-the-badge)](https://hub.docker.com/r/genzouw/docker-tags/)
 [![Docker Cloud Automated build](https://img.shields.io/docker/cloud/automated/genzouw/docker-tags.svg?style=for-the-badge)](https://hub.docker.com/r/genzouw/docker-tags/)
 
