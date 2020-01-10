@@ -7,7 +7,7 @@ REST_OF_OUTPUT_PAGE=5
 opts=':p:ah'
 
 usage() {
-  echo "${0} [-p PAGE] [-a] [-h]"
+  echo "docker-tags [-p PAGE] [-a] [-h]"
   echo "    -p : Output the specified number of pages.( DEFAULT : 5 )"
   echo "    -a : Output all pages."
   echo "    -h : Output Help."
