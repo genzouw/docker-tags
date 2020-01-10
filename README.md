@@ -36,8 +36,9 @@ echo 'alias dtags="dtags"' >> ~/.zshrc
 Let's use it immediately.
 
 ```bash
-# Print tags for official image
-$ docker run --rm genzouw/docker-tags mysql
+# Print tags for official image.
+## The paging condition is 5 pages by default.
+$ docker run --rm genzouw/docker-tags library/mysql
 latest
 8.0.17
 8.0
@@ -49,7 +50,8 @@ latest
 5
 8.0.16
 
-$ docker run --rm genzouw/docker-tags library/mysql
+# For official images, "library /" can be omitted.
+$ docker run --rm genzouw/docker-tags mysql
 latest
 8.0.17
 8.0
@@ -68,14 +70,13 @@ $ docker run --rm genzouw/docker-tags kafkamanager/kafka-manager
 latest
 1.3.3.23
 1.3.3.22
+
+# To output all tags, add the "-f" option. This will take some time.
+$ docker run --rm genzouw/docker-tags -f mysql
+
+# To output the specified number of pages, add the "-p" option.
+$ docker run --rm genzouw/docker-tags -p 8 mysql
 ```
-
-## Relase Note
-
-| date       | version | note                 |
-| ---        | ---     | ---                  |
-| 2019-08-07 | v1.0.1  | Add paging function. |
-| 2019-07-23 | v1.0.0  | first release.       |
 
 ## License
 
