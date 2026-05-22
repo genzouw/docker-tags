@@ -1,14 +1,14 @@
 # CodeRabbit configuration
 # https://docs.coderabbit.ai/reference/configuration
 
-language: 'ja-JP'
+language: "ja-JP"
 early_access: false
 enable_free_tier: true
 
 reviews:
   # Docker Hub のタグ列挙 CLI を同梱した OSS Docker イメージを配布しているリポジトリのため、利用者環境への影響を取りこぼしたくない。
   # "assertive" で検出感度を高めに保ち、ノイズが過剰になった場合は "chill" に戻すことも検討する。
-  profile: 'assertive'
+  profile: "assertive"
 
   # PR 全体に対する指針。path_instructions に "**/*" を入れるとファイル毎に
   # 繰り返し適用されてノイズが増えるため、広範な指示は instructions に集約する。
@@ -37,20 +37,20 @@ reviews:
       - main
 
   path_instructions:
-    - path: 'Dockerfile*'
+    - path: "Dockerfile*"
       instructions: |
         Dockerfile としてレビューしてください:
         - ベースイメージのバージョンが固定 (タグ pin / digest pin) されているか。
         - 不要なパッケージ／キャッシュが残っていないか (イメージサイズと攻撃面の最小化)。
         - 機密情報 (鍵 / トークン) が ARG / ENV / COPY 経由で露出していないか。
         - root のまま実行していないか、非 root ユーザ切替を検討すべきか。
-    - path: '**/*.sh'
+    - path: "**/*.sh"
       instructions: |
         シェルスクリプトとしてレビューしてください:
         - `set -euo pipefail` 相当のエラー伝播設定が入っているか。
         - 変数展開のクォート漏れ・単語分割によるバグや任意コード実行の余地が無いか。
         - 外部入力をそのまま `eval` / `sh -c` へ流していないか。
-    - path: '.github/workflows/**'
+    - path: ".github/workflows/**"
       instructions: |
         GitHub Actions ワークフローとしてレビューしてください:
         - シークレットの露出 (echo / set-output 経由のリーク) が無いか。
@@ -59,24 +59,24 @@ reviews:
 
   # 生成物 / 依存物 / ロックファイルなどはレビュー対象から除外する。
   path_filters:
-    - '!**/dist/**'
-    - '!**/build/**'
-    - '!**/coverage/**'
-    - '!**/node_modules/**'
-    - '!**/.wrangler/**'
-    - '!**/.turbo/**'
-    - '!**/.next/**'
-    - '!infra/cdktf.out/**'
-    - '!infra/.gen/**'
-    - '!**/bun.lock'
-    - '!**/package-lock.json'
-    - '!**/yarn.lock'
-    - '!**/pnpm-lock.yaml'
-    - '!**/*.min.js'
-    - '!**/*.min.css'
-    - '!**/*.map'
-    - '!**/*.snap'
-    - '!**/*.tsbuildinfo'
+    - "**/dist/**"
+    - "**/build/**"
+    - "**/coverage/**"
+    - "**/node_modules/**"
+    - "**/.wrangler/**"
+    - "**/.turbo/**"
+    - "**/.next/**"
+    - "infra/cdktf.out/**"
+    - "infra/.gen/**"
+    - "**/bun.lock"
+    - "**/package-lock.json"
+    - "**/yarn.lock"
+    - "**/pnpm-lock.yaml"
+    - "**/*.min.js"
+    - "**/*.min.css"
+    - "**/*.map"
+    - "**/*.snap"
+    - "**/*.tsbuildinfo"
 
   abort_on_close: true
 
