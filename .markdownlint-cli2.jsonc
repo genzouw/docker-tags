@@ -1,0 +1,23 @@
+{
+  // markdownlint-cli2 設定
+  // https://github.com/DavidAnson/markdownlint-cli2
+  "config": {
+    "default": true,
+    // 行長制限: コード/表/長文を伴うドキュメントが多いので無効化
+    "MD013": false,
+    // インライン HTML: README や PR テンプレで <!-- --> やテーブル装飾を使うので許可
+    "MD033": false,
+    // 単一の H1 を強制: 既存ドキュメントが満たさないものがあるため無効化
+    "MD025": false,
+    // 重複ヘッダ: 兄弟見出し間のみ重複を禁止する
+    "MD024": { "siblings_only": true },
+    // 最初の行が H1 でなくてもよい (PR テンプレなど)
+    "MD041": false,
+    // 強調を見出しに使ってよい
+    "MD036": false,
+    // bare URL を許可 (GitHub flavored Markdown で自動リンク化される)
+    "MD034": false,
+  },
+  "globs": ["**/*.md"],
+  "ignores": ["**/node_modules/**", ".claude/**", "**/vendor/**"],
+}

@@ -1,0 +1,8 @@
+# hadolint configuration
+# https://github.com/hadolint/hadolint#configure
+
+ignored:
+  # alpine の apk パッケージはバージョン固定するとセキュリティ更新の取りこぼしや
+  # 将来の追従コストが大きくなるため、運用上は Dependabot によるベースイメージ
+  # 更新側に任せ、本ルールは無視する。
+  - DL3018
