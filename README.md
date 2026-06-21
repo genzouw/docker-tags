@@ -22,7 +22,7 @@ This docker image print docker image tags that you choice.
 
 ## Usage
 
-*If possible, it is recommended to set the following aliases in startup scripts such as `.bashrc` or` .bashrc`.*
+*If possible, it is recommended to set the following aliases in startup scripts such as `.bashrc` or `.zshrc`.*
 
 ```bash
 # For Bash
