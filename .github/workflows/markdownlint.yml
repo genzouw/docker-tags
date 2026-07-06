@@ -2,13 +2,13 @@ name: markdownlint
 
 on:
   push:
-    branches: [main]
+    branches: [main, master]
     paths:
       - '**/*.md'
       - '.markdownlint-cli2.jsonc'
       - '.github/workflows/markdownlint.yml'
   pull_request:
-    branches: [main]
+    branches: [main, master]
     paths:
       - '**/*.md'
       - '.markdownlint-cli2.jsonc'
@@ -25,7 +25,7 @@ jobs:
   markdownlint:
     name: markdownlint-cli2
     runs-on: ubuntu-latest
-    # 既存ドキュメントの MD040/MD031 違反を片付けるまでは赤検知にしない。
+    # 既存ドキュメントの違反を片付けるまでは赤検知にしない。
     # 整備完了後に continue-on-error を外して赤検知に切り替える。
     continue-on-error: true
     steps:

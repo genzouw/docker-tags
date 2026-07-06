@@ -44,7 +44,7 @@ URL="https://registry.hub.docker.com/v2/repositories/${DOCKER_IMAGE}/tags/"
   echo "TAG SIZE UPDATED"
   echo "----- ----- -----"
   while [ "${URL}" != null ]; do
-    [[ -n "${REST_OF_OUTPUT_PAGE}" ]] && [[ ! "$((REST_OF_OUTPUT_PAGE--))" > 0 ]] && break
+    [[ -n "${REST_OF_OUTPUT_PAGE}" ]] && (( REST_OF_OUTPUT_PAGE-- <= 0 )) && break
 
     RESPONSE="$(
       curl --keepalive-time 300 -4 --silent "${URL}" 2>/dev/null
