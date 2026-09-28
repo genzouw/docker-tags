@@ -11,7 +11,6 @@
     "* 9-11 * * *"
   ],
   "minimumReleaseAge": "1 day",
-  "minimumReleaseAgeBehaviour": "timestamp-optional",
   "prConcurrentLimit": 10,
   "labels": [
     "dependencies"
@@ -31,6 +30,18 @@
     ]
   },
   "packageRules": [
+    {
+      "description": [
+        "docker データソース（GHCR など release timestamp を返さないレジストリを含む）は、",
+        "timestamp が取れない更新でも minimumReleaseAge の待機チェックを通過させる。",
+        "トップレベルに置くと npm や GitHub Releases など timestamp を確実に返す",
+        "データソースにも波及するため、docker データソースだけに絞る。"
+      ],
+      "matchDatasources": [
+        "docker"
+      ],
+      "minimumReleaseAgeBehaviour": "timestamp-optional"
+    },
     {
       "description": [
         "依存更新はすべて chore プレフィックスで出す。",
