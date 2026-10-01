@@ -10,7 +10,13 @@
   "schedule": [
     "* 9-11 * * *"
   ],
-  "minimumReleaseAge": "1 day",
+  "description": [
+    "minimumReleaseAge を 3 日にしたのは、1 日では短く、公開直後の不具合やサプライチェーン攻撃のリスクを十分に下げられないため。",
+    "minimumReleaseAgeBehaviour を timestamp-optional にしたのは、全リポジトリで設定を揃えるため。",
+    "公開日時を返さないレジストリ (Docker Hub / GHCR 等) でも更新 PR が止まらないが、その依存には待機期間が効かない。"
+  ],
+  "minimumReleaseAge": "3 days",
+  "minimumReleaseAgeBehaviour": "timestamp-optional",
   "prConcurrentLimit": 10,
   "labels": [
     "dependencies"
@@ -30,18 +36,6 @@
     ]
   },
   "packageRules": [
-    {
-      "description": [
-        "docker データソース（GHCR など release timestamp を返さないレジストリを含む）は、",
-        "timestamp が取れない更新でも minimumReleaseAge の待機チェックを通過させる。",
-        "トップレベルに置くと npm や GitHub Releases など timestamp を確実に返す",
-        "データソースにも波及するため、docker データソースだけに絞る。"
-      ],
-      "matchDatasources": [
-        "docker"
-      ],
-      "minimumReleaseAgeBehaviour": "timestamp-optional"
-    },
     {
       "description": [
         "依存更新はすべて chore プレフィックスで出す。",
