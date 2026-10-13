@@ -28,4 +28,4 @@ permissions:
 
 jobs:
   hadolint:
-    uses: genzouw/ci-workflows/.github/workflows/hadolint.yml@e09bd80a53249331e9b307463dacd213c4feb1f8 # v1.5.10
+    uses: genzouw/ci-workflows/.github/workflows/hadolint.yml@93c13f4d4cfeaf88cd2cceebe5d7daf81625cb5b # v1.5.11
